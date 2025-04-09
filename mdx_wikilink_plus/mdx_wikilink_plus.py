@@ -213,6 +213,7 @@ class WikiLinkPlusPattern(markdown.inlinepatterns.Pattern):
             if 'wiki_image_class' in self.md.Meta:
                 image_class = self.md.Meta['wiki_image_class'][0]
         return base_url, end_url, url_whitespace, url_case, label_case, html_class, image_class
+        if hasattr(self.md, "Meta") and self.md.Meta:
 
 
 def makeExtension(*args, **kwargs):  # pragma: no cover
